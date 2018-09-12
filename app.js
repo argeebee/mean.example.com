@@ -8,6 +8,7 @@ var LocalStrategy = require('passport-local').Strategy;
 
 // Models
 var Users = require('./models/users');
+var Articles = require('./models/articles');
 
 var config = require('./config.dev');
 var mongoose = require('mongoose');
@@ -16,8 +17,12 @@ var MongoStore = require('connect-mongo')(session);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var articlesRouter = require('./routes/articles');
+
+var cmsRouter = require('./routes/cms');
 
 var apiUsersRouter = require('./routes/api/users');
+var apiArticlesRouter = require('./routes/api/articles');
 
 var app = express();
 
@@ -94,7 +99,8 @@ app.use(function(req,res,next){
     '/',
     '/favicon.ico',
     '/users/login',
-    '/users/register'
+    '/users/register',
+    '/articles'
   ];
 
   if(whitelist.indexOf(req.url)!==-1){
@@ -102,7 +108,8 @@ app.use(function(req,res,next){
   }
 
   var subs = [
-    '/public'
+    '/public',
+    '/articles'
   ];
 
   for(var sub of subs){
@@ -136,7 +143,10 @@ app.use(function(req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/articles', articlesRouter);
+app.use('/cms', cmsRouter);
 app.use('/api/users', apiUsersRouter);
+app.use('/api/articles', apiArticlesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
