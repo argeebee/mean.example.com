@@ -19,11 +19,11 @@ router.get('/', function(req, res, next) {
 router.get('/:userId', function(req, res, next) {
   var userId = req.params.userId;
 
-  Users.findOne({_id: userId}, function(err, users){
+  Users.findOne({_id: userId}, function(err, user){
       if(err){
         return res.json({sucess: false, error:err});
       }
-      return res.json({success: true, users: users});
+      return res.json({success: true, user: user});
   });
 
 });
