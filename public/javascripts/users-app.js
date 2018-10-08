@@ -1,5 +1,5 @@
 function viewIndex(){
-    var url = '/api/users';
+    var url = 'https://argeebee22.com/blog/api/users';
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url);
@@ -40,7 +40,7 @@ function viewIndex(){
 }
 
 function viewUser(id){
-    var url = '/api/users/' + id;
+    var url = 'https://argeebee22.com/blog/api/users/' + id;
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url);
@@ -117,7 +117,7 @@ function viewUser(id){
         editUser.addEventListener('submit', function(e){
             e.preventDefault();
             var formData = new FormData(editUser);
-            var url = '/api/users';
+            var url = 'https://argeebee22.com/blog/api/users';
             var xhr = new XMLHttpRequest();
             xhr.open('PUT', url);
             xhr.setRequestHeader(
@@ -175,7 +175,7 @@ function createUser(){
         e.preventDefault();
 
         var formData = new FormData(createUser);
-        var url = '/api/users';
+        var url = 'https://argeebee22.com/blog/api/users';
         var xhr = new XMLHttpRequest();
         xhr.open('POST', url);
 
@@ -203,7 +203,7 @@ function createUser(){
 function deleteUser(id){
     if(confirm('Are you sure?')){
         
-        var url = '/api/users/' + id;
+        var url = 'https://argeebee22.com/blog/api/users/' + id;
 
         var xhr = new XMLHttpRequest();
         xhr.open('DELETE', url);

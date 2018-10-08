@@ -1,5 +1,5 @@
 function viewIndex(){
-    var url = '/api/articles';
+    var url = 'https://argeebee22.com/blog/api/articles';
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url);
@@ -37,7 +37,7 @@ function viewIndex(){
 }
 
 function viewArticle(slug){
-    var url = '/api/articles/' + slug;
+    var url = 'https://argeebee22.com/blog/api/articles/' + slug;
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url);
@@ -112,7 +112,7 @@ function viewArticle(slug){
         editArticle.addEventListener('submit', function(e){
             e.preventDefault();
             var formData = new FormData(editArticle);
-            var url = '/api/articles';
+            var url = 'https://argeebee22.com/blog/api/articles';
             var xhr = new XMLHttpRequest();
             xhr.open('PUT', url);
             xhr.setRequestHeader(
@@ -156,7 +156,7 @@ function createArticle(){
         e.preventDefault();
 
         var formData = new FormData(createArticle);
-        var url = '/api/articles';
+        var url = 'https://argeebee22.com/blog/api/articles';
         var xhr = new XMLHttpRequest();
         xhr.open('POST', url);
 
@@ -184,7 +184,7 @@ function createArticle(){
 function deleteArticle(id){
     if(confirm('Are you sure?')){
         
-        var url = '/api/articles/' + id;
+        var url = 'https://argeebee22.com/blog/api/articles/' + id;
 
         var xhr = new XMLHttpRequest();
         xhr.open('DELETE', url);

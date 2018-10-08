@@ -98,7 +98,7 @@ app.use(function(req,res,next){
 
 // Session based access control
 app.use(function(req,res,next){
-  //return next();
+  return next();
 
   var whitelist = [
     '/',

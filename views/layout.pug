@@ -5,20 +5,20 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     nav
-      a(href='/') Home
+      a(href='https://argeebee22.com/blog') Home
       |&nbsp;|&nbsp;
-      a(href='/articles') Blog
+      a(href='https://argeebee22.com/blog/articles') Blog
       |&nbsp;|&nbsp;
 
       if session.user.id
-        a(href='/users') Users
+        a(href='https://argeebee22.com/blog/users') Users
         |&nbsp;|&nbsp;
-        a(href='/cms') CMS
+        a(href='https://argeebee22.com/blog/cms') CMS
         |&nbsp;|&nbsp;        
-        a(href='/users/logout') Logout
+        a(href='https://argeebee22.com/blog/users/logout') Logout
       else  
-        a(href='/users/login') Login
+        a(href='https://argeebee22.com/blog/users/login') Login
         |&nbsp;|&nbsp;
-        a(href='/users/register') Register
+        a(href='https://argeebee22.com/blog/users/register') Register
        
     block content
